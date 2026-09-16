@@ -2668,6 +2668,78 @@ img, video, svg, canvas{
 }
 </style>
 
+
+<style id="thyara-hero-specialties-mobile">
+.hero-specialties{ width: 100%; }
+.hero-specialties-title{
+  display: none;
+  margin: 0 0 0.55rem;
+  font-family: var(--font-display, Georgia, serif);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+@media (max-width: 780px){
+  .hero-copy{
+    text-align: center !important;
+  }
+  .hero-copy .eyebrow,
+  .hero-title,
+  .hero h1{
+    text-align: center !important;
+  }
+  .hero-lead{
+    text-align: justify !important;
+    text-align-last: center !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    -ms-hyphens: none !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    max-width: 34rem;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .hero-specialties{
+    width: 100%;
+    max-width: 22.5rem;
+    margin: 0.85rem auto 0.35rem;
+  }
+  .hero-specialties-title{
+    display: block !important;
+    color: #ff6ec4 !important;
+    font-size: 0.82rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.12em !important;
+    text-shadow: 0 0 12px rgba(255,45,138,.45);
+  }
+  .hero-specialties .hero-meta{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    justify-items: center !important;
+    column-gap: 0.75rem !important;
+    row-gap: 0.55rem !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0.85rem 0.75rem !important;
+    border: 1.5px solid #ff2d8a !important;
+    border-radius: 14px !important;
+    background: rgba(255,45,138,.06) !important;
+    box-shadow:
+      0 0 0 1px rgba(255,110,196,.25) inset,
+      0 0 18px rgba(255,45,138,.45),
+      0 0 36px rgba(255,45,138,.22) !important;
+  }
+  .hero-specialties .hero-meta-item{
+    text-align: center !important;
+    justify-self: center !important;
+    width: 100%;
+    font-size: 0.82rem !important;
+    line-height: 1.25 !important;
+  }
+}
+</style>
+
 </head>
 <body>
   <a class="skip" href="#conteudo">Ir ao conteúdo</a>
@@ -2774,14 +2846,17 @@ img, video, svg, canvas{
         <div class="hero-copy">
           <p class="eyebrow">São Leopoldo · RS</p>
           <h1 class="hero-title">Olhar que <em>define</em> você</h1>
-          <p class="hero-lead">Sobrancelhas e cílios com traço preciso, acabamento natural e atendimento próximo — do design ao resultado que dura.</p>
-          <div class="hero-meta" role="list">
-            <a class="hero-meta-item" href="#svc-design" role="listitem">Design personalizado</a>
-            <a class="hero-meta-item" href="#svc-henna" role="listitem">Design com henna</a>
-            <a class="hero-meta-item" href="#svc-lamination" role="listitem">Brow Lamination</a>
-            <a class="hero-meta-item" href="#svc-reconstrucao" role="listitem">Reconstrução</a>
-            <a class="hero-meta-item" href="#svc-lifting" role="listitem">Lash Lifting</a>
-            <a class="hero-meta-item" href="#svc-lashes" role="listitem">Volume Brasileiro &amp; 5D</a>
+          <p class="hero-lead">Sobrancelhas e cílios com traço preciso, acabamento natural e atendimento próximo, do design ao resultado que dura.</p>
+          <div class="hero-specialties">
+            <p class="hero-specialties-title">Algumas Especialidades</p>
+            <div class="hero-meta" role="list">
+              <a class="hero-meta-item" href="#svc-design" role="listitem">Design personalizado</a>
+              <a class="hero-meta-item" href="#svc-henna" role="listitem">Design com henna</a>
+              <a class="hero-meta-item" href="#svc-lamination" role="listitem">Brow Lamination</a>
+              <a class="hero-meta-item" href="#svc-reconstrucao" role="listitem">Reconstrução</a>
+              <a class="hero-meta-item" href="#svc-lifting" role="listitem">Lash Lifting</a>
+              <a class="hero-meta-item" href="#svc-lashes" role="listitem">Volume Brasileiro &amp; 5D</a>
+            </div>
           </div>
           <div class="hero-actions">
             <a class="btn btn-gold" href="https://wa.me/5551981369418" target="_blank" rel="noopener noreferrer">
