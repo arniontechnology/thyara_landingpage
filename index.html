@@ -2480,7 +2480,7 @@ img, video, svg, canvas{
 
 
 <style id="thyara-mobile-header-fix">
-/* Mobile header: row1 logo+Agendar | row2 compact services — no CTA overlap */
+/* Mobile: compact header (icon + name same line) + hero CTAs side-by-side */
 @media (max-width: 780px){
   :root{ --header-h: auto; }
   .site-header{ overflow-x: hidden; }
@@ -2489,46 +2489,73 @@ img, video, svg, canvas{
     grid-template-columns: minmax(0,1fr) auto !important;
     grid-template-rows: auto auto !important;
     align-items: center !important;
-    column-gap: 0.65rem !important;
-    row-gap: 0.35rem !important;
+    column-gap: 0.5rem !important;
+    row-gap: 0.28rem !important;
     height: auto !important;
     min-height: 0 !important;
     flex-wrap: unset !important;
     width: min(100% - 1.1rem, 1120px) !important;
     margin-inline: auto;
-    padding: 0.45rem 0 0.5rem !important;
+    padding: 0.35rem 0 0.4rem !important;
   }
-  /* flatten so logo / services / CTA are grid children */
-  .brand-cluster{
-    display: contents !important;
-    width: auto !important;
-  }
+  .brand-cluster{ display: contents !important; width: auto !important; }
+
   .brand{
     grid-column: 1 !important;
     grid-row: 1 !important;
-    height: 58px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    height: auto !important;
+    min-height: 0 !important;
     padding: 0 !important;
     align-self: center !important;
+    min-width: 0 !important;
     z-index: 2;
   }
+  .brand-logo-pic{ display: flex; flex: 0 0 auto; align-items: center; }
   .brand-logo{
-    height: 54px !important;
-    width: auto !important;
-    max-width: min(52vw, 168px) !important;
+    height: 42px !important;
+    width: 42px !important;
+    max-width: 42px !important;
     object-fit: contain !important;
   }
+  /* fill the white gap — name on one line beside icon */
+  .brand-text,
+  .brand-text--inline{
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+  }
+  .brand-text--inline .brand-name{
+    display: block !important;
+    font-family: var(--font-display, Georgia, serif) !important;
+    font-size: clamp(0.78rem, 3.4vw, 0.95rem) !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em !important;
+    line-height: 1.15 !important;
+    color: #e0126e !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  .brand-tag{ display: none !important; }
+
   .nav-cta{
     grid-column: 2 !important;
     grid-row: 1 !important;
     align-self: center !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding: 0.48rem 0.85rem !important;
-    font-size: 0.72rem !important;
+    margin: 0 !important;
+    padding: 0.42rem 0.78rem !important;
+    font-size: 0.7rem !important;
     white-space: nowrap !important;
     z-index: 2;
   }
-  .nav-cta svg{ width: 14px !important; height: 14px !important; }
+  .nav-cta svg{ width: 13px !important; height: 13px !important; }
+
   .header-services{
     grid-column: 1 / -1 !important;
     grid-row: 2 !important;
@@ -2538,57 +2565,106 @@ img, video, svg, canvas{
     flex: unset !important;
     justify-content: space-between !important;
     align-items: center !important;
-    gap: 0.1rem !important;
-    padding: 0.1rem 0 0 !important;
+    gap: 0.08rem !important;
+    padding: 0.05rem 0 0 !important;
     overflow-x: auto !important;
-    overflow-y: hidden !important;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
   .header-services::-webkit-scrollbar{ display: none; }
-  .hsvc{
-    flex: 1 1 0 !important;
-    min-width: 0 !important;
-    max-width: none !important;
-  }
-  .hsvc picture{
-    max-width: 100% !important;
-    width: 100% !important;
-  }
+  .hsvc{ flex: 1 1 0 !important; min-width: 0 !important; max-width: none !important; }
+  .hsvc picture{ max-width: 100% !important; width: 100% !important; }
   .hsvc img{
-    max-height: 28px !important;
+    max-height: 26px !important;
     width: 100% !important;
-    max-width: 4.1rem !important;
+    max-width: 3.9rem !important;
     margin-inline: auto;
     height: auto !important;
     object-fit: contain !important;
   }
-  .hsvc-sep{
-    height: 1.15rem !important;
-    width: 1px !important;
-    flex: 0 0 auto !important;
-    opacity: 0.7;
+  .hsvc-sep{ height: 1.05rem !important; width: 1px !important; flex: 0 0 auto !important; opacity: 0.65; }
+
+  /* Hero CTAs: compact, side by side — pink neon WA + gold neon results */
+  .hero-actions{
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+  }
+  .hero-actions .btn{
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    justify-content: center !important;
+    padding: 0.62rem 0.55rem !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1.2 !important;
+    gap: 0.35rem !important;
+    white-space: nowrap !important;
+  }
+  .hero-actions .btn svg{
+    width: 14px !important;
+    height: 14px !important;
+    flex-shrink: 0;
+  }
+  .hero-actions .btn-gold{
+    background: linear-gradient(135deg, #ff4fb2 0%, #ff2d8a 45%, #e0126e 100%) !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,.28) inset,
+      0 0 16px rgba(255,45,138,.55),
+      0 6px 16px rgba(224,18,110,.32) !important;
+    text-shadow: 0 1px 0 rgba(0,0,0,.12);
+  }
+  .hero-actions .btn-gold:hover{
+    filter: brightness(1.06);
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,.35) inset,
+      0 0 22px rgba(255,45,138,.7),
+      0 8px 20px rgba(224,18,110,.4) !important;
+  }
+  .hero-actions .btn-ghost,
+  .hero-actions .btn-ghost-accent{
+    border: 1px solid rgba(232, 196, 120, .85) !important;
+    color: #f0d59a !important;
+    background: rgba(201,168,106,.12) !important;
+    box-shadow:
+      0 0 14px rgba(201,168,106,.35),
+      0 0 28px rgba(201,168,106,.18) !important;
+    text-shadow: 0 0 10px rgba(201,168,106,.35);
+  }
+  .hero-actions .btn-ghost-accent:hover{
+    border-color: #f3dfa8 !important;
+    color: #ffe9b8 !important;
+    background: rgba(201,168,106,.2) !important;
+    box-shadow:
+      0 0 18px rgba(201,168,106,.5),
+      0 6px 18px rgba(201,168,106,.25) !important;
   }
 }
 @media (max-width: 480px){
-  .brand{ height: 52px !important; }
-  .brand-logo{
-    height: 48px !important;
-    max-width: min(48vw, 148px) !important;
-  }
-  .nav-cta{
-    padding: 0.42rem 0.72rem !important;
-    font-size: 0.68rem !important;
-  }
-  .hsvc img{
-    max-height: 24px !important;
-    max-width: 3.55rem !important;
-  }
-  .hsvc-sep{ height: 1rem !important; }
+  .brand-logo{ height: 38px !important; width: 38px !important; max-width: 38px !important; }
+  .brand-text--inline .brand-name{ font-size: 0.78rem !important; }
+  .nav-cta{ padding: 0.38rem 0.65rem !important; font-size: 0.66rem !important; }
+  .hsvc img{ max-height: 22px !important; max-width: 3.35rem !important; }
+  .hero-actions .btn{ font-size: 0.66rem !important; padding: 0.58rem 0.4rem !important; }
+  /* slightly shorter WA label on very small screens via smaller padding already */
 }
 @media (max-width: 360px){
-  .hsvc img{ max-height: 22px !important; max-width: 3.2rem !important; }
-  .nav-cta{ padding: 0.4rem 0.55rem !important; font-size: 0.64rem !important; }
+  .brand-text--inline .brand-name{ font-size: 0.72rem !important; }
+  .hero-actions{ gap: 0.35rem !important; }
+  .hero-actions .btn{ font-size: 0.6rem !important; padding: 0.52rem 0.28rem !important; }
+}
+.btn-label-short{ display:none; }
+@media (max-width: 780px){
+  .hero-actions .btn-label-full{ display:none !important; }
+  .hero-actions .btn-label-short{ display:inline !important; }
+}
+/* Desktop+: keep stacked logo image; hide inline name */
+@media (min-width: 781px){
+  .brand-text--inline{ display: none !important; }
 }
 </style>
 
@@ -2636,10 +2712,15 @@ img, video, svg, canvas{
       <div class="header-band-inner">
         <div class="brand-cluster">
           <a class="brand" href="#topo" aria-label="Thyara Face Studio — início">
-            <picture>
+            <picture class="brand-logo-pic">
+              <source media="(max-width: 780px)" srcset="assets/logo-header-icon.webp" type="image/webp" />
+              <source media="(max-width: 780px)" srcset="assets/logo-header-icon.png" />
               <source srcset="assets/logo-header-mark.webp" type="image/webp" />
-              <img class="brand-logo" src="assets/logo-header-mark.png" alt="Thyara Face Studio" width="179" height="224" />
+              <img class="brand-logo" src="assets/logo-header-mark.png" alt="" width="179" height="224" />
             </picture>
+            <span class="brand-text brand-text--inline" aria-hidden="true">
+              <span class="brand-name">Thyara Face Studio</span>
+            </span>
           </a>
           <nav class="header-services" aria-label="Especialidades">
             <a class="hsvc" href="#svc-design">
@@ -2705,7 +2786,8 @@ img, video, svg, canvas{
           <div class="hero-actions">
             <a class="btn btn-gold" href="https://wa.me/5551981369418" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              Agendar pelo WhatsApp
+              <span class="btn-label-full">Agendar pelo WhatsApp</span>
+              <span class="btn-label-short">WhatsApp</span>
             </a>
             <a class="btn btn-ghost btn-ghost-accent" href="#portfolio">Ver resultados <span class="btn-chevron" aria-hidden="true">›</span></a>
           </div>
