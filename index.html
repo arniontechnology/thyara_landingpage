@@ -11,7 +11,9 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <title>Thyara Vargas | Face Studio — Sobrancelhas &amp; Cílios — São Leopoldo</title>
-  <link rel="icon" href="assets/favicon.jpg" type="image/jpeg" />
+  <link rel="icon" href="assets/favicon.png" type="image/png" sizes="192x192" />
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -884,7 +886,7 @@
       margin-bottom: 0.35rem;
     }
     .footer-loc, .footer-copy {
-      color: var(--muted);
+      color: var(--pink-glow, #ff2d8a);
       font-size: 0.88rem;
       font-weight: 300;
     }
@@ -893,10 +895,10 @@
       font-size: 0.9rem;
     }
     .footer-links a {
-      color: var(--bone-dim);
-      transition: color .2s;
+      color: var(--pink-glow, #ff2d8a);
+      transition: color .2s, text-shadow .2s;
     }
-    .footer-links a:hover { color: var(--rose); }
+    .footer-links a:hover { color: #ff6ec4; text-shadow: 0 0 12px rgba(255,45,138,.55); }
     .footer-label {
       font-size: 0.68rem;
       letter-spacing: 0.2em;
@@ -1623,32 +1625,28 @@
   .final-inner--glow{ animation: none; }
 }
 
-/* —— Footer full-bleed cream band —— */
+/* —— Footer dark band (matches site bg) + pink neon text —— */
 .site-footer{
-  border-top: 1px solid rgba(255,45,138,.16) !important;
+  border-top: 1px solid rgba(255,45,138,.22) !important;
   padding: 0 !important;
   margin: 0 !important;
   width: 100% !important;
   max-width: none !important;
-  background-color: #f7f1e8 !important;
-  background-image:
-    linear-gradient(145deg, rgba(255,255,255,.55), rgba(255,240,246,.28) 42%, rgba(255,255,255,.2)),
-    url('assets/final-cta-texture.webp') !important;
-  background-size: cover;
-  background-position: center;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.65);
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
   border-radius: 0 !important;
 }
 .site-footer .footer-inner,
 .site-footer .wrap.footer-inner{
-  padding-top: 0.55rem !important;
-  padding-bottom: 4.35rem !important; /* FAB clearance only — content stays compact */
+  padding-top: 1.35rem !important;
+  padding-bottom: 5.25rem !important; /* chat FAB clearance */
   max-width: var(--wrap, 1120px);
   margin-inline: auto;
 }
 .footer-grid{
   display: grid !important;
-  gap: 0.5rem 1.5rem !important;
+  gap: 1.15rem 1.75rem !important;
   align-items: center !important;
 }
 @media (min-width: 780px){
@@ -1676,7 +1674,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.2rem;
+  gap: 0.28rem;
   min-width: 0;
 }
 .footer-logo{
@@ -1687,27 +1685,29 @@
   margin: 0 !important;
   opacity: 1 !important;
   object-fit: contain !important;
-  filter: drop-shadow(0 2px 8px rgba(224,18,110,.1));
+  filter: drop-shadow(0 0 10px rgba(255,45,138,.28)) drop-shadow(0 2px 10px rgba(0,0,0,.35));
 }
 @media (min-width: 780px){
   .footer-logo{ height: 108px !important; }
 }
 .footer-loc{
-  color: #4f4640 !important;
+  color: #ff2d8a !important;
   font-size: 0.95rem !important;
   font-weight: 500 !important;
-  line-height: 1.25;
+  line-height: 1.3;
   margin: 0 !important;
   max-width: none !important;
   white-space: nowrap;
+  text-shadow: 0 0 14px rgba(255,45,138,.35);
 }
 .footer-copy{
   margin: 0 !important;
-  color: #8a786a !important;
+  color: #ff6ec4 !important;
   font-size: 0.84rem !important;
   font-weight: 500 !important;
   letter-spacing: 0.03em;
   white-space: nowrap;
+  text-shadow: 0 0 12px rgba(255,45,138,.28);
 }
 .footer-col--contact,
 .footer-col--nav{
@@ -1717,13 +1717,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 1rem;
-  row-gap: 0.38rem;
+  row-gap: 0.45rem;
   justify-items: start;
 }
 .footer-links{
   display: flex;
   flex-direction: column;
-  gap: 0.38rem;
+  gap: 0.45rem;
   font-size: 1.02rem;
 }
 .footer-col--nav .footer-links,
@@ -1732,17 +1732,19 @@
 }
 .footer-col--nav a,
 .footer-col--contact .footer-links a{
-  color: #2c2420 !important;
+  color: #ff2d8a !important;
   font-weight: 600 !important;
   text-decoration: none;
-  transition: color .2s ease, transform .2s ease;
+  transition: color .2s ease, transform .2s ease, text-shadow .2s ease;
   width: fit-content;
-  line-height: 1.2;
+  line-height: 1.25;
   font-size: 1.02rem;
+  text-shadow: 0 0 12px rgba(255,45,138,.3);
 }
 .footer-col--nav a:hover,
 .footer-col--contact .footer-links a:hover{
-  color: #e0126e !important;
+  color: #fff0f7 !important;
+  text-shadow: 0 0 16px rgba(255,110,196,.75), 0 0 28px rgba(255,45,138,.45);
   transform: translateX(2px);
 }
 .footer-label,
@@ -2043,51 +2045,56 @@ img, video, svg, canvas{
     opacity: 0.92 !important;
   }
 
-  /* Footer: shorter, less cramped */
+  /* Footer: dark neon, clearer vertical rhythm */
   .site-footer .footer-inner,
   .site-footer .wrap.footer-inner{
-    padding-top: 0.75rem !important;
-    padding-bottom: 5rem !important;
-    padding-inline: 0.85rem !important;
+    padding-top: 1.25rem !important;
+    padding-bottom: 5.75rem !important; /* chat FAB clearance */
+    padding-inline: 1rem !important;
   }
   .footer-grid{
     grid-template-columns: 1fr !important;
-    gap: 0.85rem !important;
+    gap: 1.35rem !important;
     align-items: start !important;
   }
   .footer-brand-col{
-    grid-template-columns: auto 1fr !important;
-    column-gap: 0.65rem !important;
+    grid-template-columns: auto minmax(0,1fr) !important;
+    column-gap: 0.75rem !important;
+    row-gap: 0.35rem !important;
     align-items: center !important;
   }
   .footer-logo{
-    height: 72px !important;
+    height: 76px !important;
     width: auto !important;
+    max-width: 88px !important;
+  }
+  .footer-brand-meta{
+    gap: 0.3rem !important;
   }
   .footer-loc{
     white-space: normal !important; /* was nowrap → caused sideways scroll */
-    font-size: 0.82rem !important;
-    line-height: 1.3 !important;
+    font-size: 0.84rem !important;
+    line-height: 1.35 !important;
     max-width: 100% !important;
   }
   .footer-copy{
     white-space: normal !important;
-    font-size: 0.75rem !important;
+    font-size: 0.78rem !important;
   }
   .footer-col--contact .footer-links{
     flex-direction: row !important;
     flex-wrap: wrap !important;
-    gap: 0.55rem 1.1rem !important;
+    gap: 0.7rem 1.35rem !important;
   }
   .footer-col--nav{
     grid-template-columns: 1fr 1fr !important;
-    column-gap: 0.75rem !important;
-    row-gap: 0.32rem !important;
+    column-gap: 1rem !important;
+    row-gap: 0.55rem !important;
     width: 100%;
   }
   .footer-col--nav a,
   .footer-col--contact .footer-links a{
-    font-size: 0.9rem !important;
+    font-size: 0.92rem !important;
   }
 
   /* Misc overflow sources */
@@ -2114,7 +2121,7 @@ img, video, svg, canvas{
     padding: 0.5rem 0.85rem !important;
     font-size: 0.74rem !important;
   }
-  .footer-logo{ height: 64px !important; }
+  .footer-logo{ height: 68px !important; max-width: 80px !important; }
 }
 </style>
 
@@ -3075,8 +3082,8 @@ img, video, svg, canvas{
         <div class="footer-brand-col">
           <div class="footer-logo-cell">
             <picture>
-              <source srcset="assets/logo-footer-full.webp" type="image/webp" />
-              <img class="footer-logo" src="assets/logo-footer-full.png" alt="Thyara Face Studio" width="420" height="529" />
+              <source srcset="assets/logo-footer-neon.webp" type="image/webp" />
+              <img class="footer-logo" src="assets/logo-footer-neon.png" alt="Thyara Face Studio" width="520" height="520" />
             </picture>
           </div>
           <div class="footer-brand-meta">
