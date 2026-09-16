@@ -2584,7 +2584,7 @@ img, video, svg, canvas{
   }
   .hsvc-sep{ height: 1.05rem !important; width: 1px !important; flex: 0 0 auto !important; opacity: 0.65; }
 
-  /* Hero CTAs: compact, side by side — pink neon WA + gold neon results */
+  /* Hero CTAs: compact, side by side — pink neon WA + gold neon results (mobile only) */
   .hero-actions{
     display: flex !important;
     flex-wrap: nowrap !important;
@@ -2668,6 +2668,68 @@ img, video, svg, canvas{
 }
 </style>
 
+
+<style id="thyara-hero-actions-equal-gold">
+/* Desktop only — equal gold neon CTAs; mobile left untouched */
+@media (min-width: 781px){
+  .hero-actions{
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    max-width: 30rem;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .hero-actions .btn{
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    width: 50% !important;
+    max-width: none !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+    padding: 0.85rem 1rem !important;
+    font-size: 0.92rem !important;
+  }
+  .hero-actions .btn-gold,
+  .hero-actions .btn-ghost,
+  .hero-actions .btn-ghost-accent{
+    background: linear-gradient(145deg, #edd9a8 0%, #c9a86a 42%, #a07c45 100%) !important;
+    color: #1a140e !important;
+    border: none !important;
+    font-weight: 600;
+    box-shadow:
+      0 0 0 1px rgba(255,248,230,.38) inset,
+      0 0 16px rgba(201,168,106,.55),
+      0 0 32px rgba(201,168,106,.28),
+      0 8px 22px rgba(160,124,69,.26) !important;
+    text-shadow: none !important;
+  }
+  .hero-actions .btn-gold:hover,
+  .hero-actions .btn-ghost:hover,
+  .hero-actions .btn-ghost-accent:hover{
+    filter: brightness(1.06);
+    transform: translateY(-2px);
+    box-shadow:
+      0 0 0 1px rgba(255,248,230,.5) inset,
+      0 0 22px rgba(201,168,106,.7),
+      0 12px 28px rgba(160,124,69,.34) !important;
+    border-color: transparent !important;
+    background: linear-gradient(145deg, #edd9a8 0%, #c9a86a 42%, #a07c45 100%) !important;
+    color: #1a140e !important;
+  }
+  .hero-actions .btn-chevron{
+    font-size: 1.1em;
+    margin-left: 0.15rem;
+    opacity: 0.9;
+    color: inherit;
+  }
+}
+</style>
 
 <style id="thyara-hero-specialties-mobile">
 .hero-specialties{ width: 100%; }
